@@ -2,15 +2,18 @@ import React from "react";
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
-import {removeFromCart} from "../redux/slices/CartSlice"
-import {useDispatch} from "react-redux"
+import { removeFromCart } from "../redux/slices/CartSlice";
+import { useDispatch } from "react-redux";
 
 const Items = ({ id, name, qty, price, img }) => {
-const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   return (
     <div className="flex gap-2 shadow-md rounded-lg p-2 mb-3">
-      <MdDelete className="absolute right-7 cursor-pointer text-gray-700" />
+      <MdDelete
+        onClick={() => dispatch(removeFromCart({ id, img, name, price, qty }))}
+        className="absolute right-7 cursor-pointer text-gray-700"
+      />
       <img src={img} alt="food-img" className="w-[50px] h-[50px]" />
       <div className="leading-5">
         <h2 className="font-bold text-gray-800">{name}</h2>

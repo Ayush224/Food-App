@@ -3,6 +3,7 @@ import Items from "./Items";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import { h2 } from "motion/react-client";
 
 const Cart = () => {
   const [active, setActice] = useState(true);
@@ -23,18 +24,24 @@ const Cart = () => {
             onClick={() => setActice(!active)}
           />
         </div>
-        {cartItems.map((food) => {
-          return (
-            <Items
-              key={food.id}
-              id={food.id}
-              name={food.name}
-              price={food.price}
-              img={food.img}
-              qty={food.qty}
-            />
-          );
-        })}
+        {cartItems.length > 0 ? (
+          cartItems.map((food) => {
+            return (
+              <Items
+                key={food.id}
+                id={food.id}
+                name={food.name}
+                price={food.price}
+                img={food.img}
+                qty={food.qty}
+              />
+            );
+          })
+        ) : (
+          <h2 className="text-center text-xl font-bold text-gray-800">
+            Your cart is empty..
+          </h2>
+        )}
 
         <div className="absolute bottom-0">
           <h3 className="text-gray-800 font-semibold">Items :</h3>
