@@ -65,7 +65,7 @@ const Cart = () => {
       </div>
       <FaShoppingCart
         onClick={() => setActice(!active)}
-        className={`mr-5 rounded-2xl bg-blue-400 shadow-md text-6xl p-2 fixed bottom-4 right-4 ${
+        className={`hide lg:mr-5 rounded-2xl bg-blue-400 shadow-md text-4xl lg:text-6xl p-2 fixed bottom-4 right-4 ${
           totalQty > 0 && "animate-bounce delay-500 transition-all"
         }`}
       />
