@@ -1,4 +1,4 @@
-import { div } from "motion/react-client";
+
 import React, { useEffect, useState } from "react";
 import { PropagateLoader } from "react-spinners";
 
