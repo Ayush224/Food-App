@@ -3,12 +3,18 @@ import Items from "./Items";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
-import { h2 } from "motion/react-client";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const [active, setActice] = useState(true);
+  const [active, setActice] = useState(false);
+  const navigate = useNavigate();
 
   const cartItems = useSelector((state) => state.cart.cart);
+  const totalQty = cartItems.reduce((total, item) => total + item.qty, 0);
+  const price = cartItems.reduce(
+    (total, item) => total + item.qty * item.price,
+    0
+  );
 
   return (
     <>
@@ -44,17 +50,24 @@ const Cart = () => {
         )}
 
         <div className="absolute bottom-0">
-          <h3 className="text-gray-800 font-semibold">Items :</h3>
-          <h3 className="text-gray-800 font-semibold">Total Amount :</h3>
+          <h3 className="text-gray-800 font-semibold">Items : {totalQty}</h3>
+          <h3 className="text-gray-800 font-semibold">
+            Total Amount : {price}
+          </h3>
           <hr className="w-[90vw] lg:w-[17.5vw] my-2" />
-          <button className="bg-green-500 font-bold px-3 py-2 mb-5 text-white rounded-lg w-[90vw] lg:w-[17.5vw]">
+          <button
+            className="bg-green-500 font-bold px-3 py-2 mb-5 text-white rounded-lg w-[90vw] lg:w-[17.5vw]"
+            onClick={() => navigate("/placed")}
+          >
             Checkout
           </button>
         </div>
       </div>
       <FaShoppingCart
         onClick={() => setActice(!active)}
-        className="rounded-2xl bg-blue-400 shadow-md text-5xl p-2 fixed bottom-4 right-4"
+        className={`mr-5 rounded-2xl bg-blue-400 shadow-md text-6xl p-2 fixed bottom-4 right-4 ${
+          totalQty > 0 && "animate-bounce delay-500 transition-all"
+        }`}
       />
     </>
   );
