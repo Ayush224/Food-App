@@ -13,6 +13,11 @@ import img12 from "./images/chilli-potato.png";
 import img13 from "./images/chicken-biryani.avif";
 import img14 from "./images/chicken-alfredo-pasta.avif";
 import img15 from "./images/bbq-chicken-pizza.png";
+import img16 from "./images/momo.png";
+import img17 from "./images/noodles.avif";
+import img18 from "./images/rajma-chawal.jpg";
+import img19 from "./images/tikka.webp";
+import img20 from "./images/veg-burger.png";
 
 const FoodData = [
   {
@@ -149,6 +154,51 @@ const FoodData = [
     desc: "Chilli Potato is a popular Indo-Chinese dish featuring crispy fried potatoes tossed in a spicy, sweet, and sour sauce. It's a flavorful starter or snack, often served in Indian restaurants and street stalls.",
     category: "Junk Food",
     rating: 4.4,
+  },
+  {
+    id: 16,
+    img: img16,
+    name: "Veg Steam Momo",
+    price: 100,
+    desc: "Veg Steamed Momos is an Indian version of steamed dumplings stuffed with vegetables and light spices. It's very popular in northern part of India and loved by many.",
+    category: "Junk Food",
+    rating: 4.9,
+  },
+  {
+    id: 17,
+    img: img17,
+    name: "Veg Noodles",
+    price: 299,
+    desc: "Vegetable noodles is a healthy Chinese inspired dish where cooked noodles are stir fried with lots of vegetables. Further the dish is seasoned with a splash of sauces, vinegar and black pepper to up the taste and flavor.",
+    category: "Junk Food",
+    rating: 4.5,
+  },
+  {
+    id: 18,
+    img: img18,
+    name: "Rajma Chawal Bowl",
+    price: 199,
+    desc: "Rajma Chawal is a North Indian dish consisting of red kidney beans (Rajma) simmered in a flavorful tomato and onion gravy, served with rice (Chawal).",
+    category: "Dinner",
+    rating: 4.7,
+  },
+  {
+    id: 19,
+    img: img19,
+    name: "Tandoori Paneer-tikka",
+    price: 499,
+    desc: "Paneer tikka is a popular Indian vegetarian dish where Indian cottage cheese (paneer) is marinated in yogurt and spices, then grilled or baked to a golden brown.",
+    category: "Snacks",
+    rating: 4.7,
+  },
+  {
+    id: 20,
+    img: img20,
+    name: "Veg Burger",
+    price: 50,
+    desc: "A veggie burger or meatless burger is a hamburger made with a patty that does not contain meat, or the patty of such a hamburger.",
+    category: "Junk Food",
+    rating: 4.1,
   },
 ];
 

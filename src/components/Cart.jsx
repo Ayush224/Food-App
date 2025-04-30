@@ -51,8 +51,9 @@ const Cart = () => {
 
         <div className="absolute bottom-0">
           <h3 className="text-gray-800 font-semibold">Items : {totalQty}</h3>
+          {cartItems.length>0 && <h3>Platform Fee : ₹30</h3>}
           <h3 className="text-gray-800 font-semibold">
-            Total Amount : {price}
+            Total Amount : ₹{cartItems.length>0 ? price+30 : price}
           </h3>
           <hr className="w-[90vw] lg:w-[17.5vw] my-2" />
           <button
