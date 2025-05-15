@@ -1,3 +1,3 @@
 # Food App
 
-<a href="https://food-heaven-lake.vercel.app/">Live Demo</a>
+<a href="https://food-heaven-lake.vercel.app/" target="_blank">Live Demo</a>
